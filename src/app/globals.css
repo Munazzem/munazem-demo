@@ -22,17 +22,10 @@
 /* Base resets & theme application */
 @layer base {
   :root {
-    --background: #fdfdfd;
-    --foreground: #111111;
+    --background: #061833;
+    --foreground: #f8fafc;
   }
 
-  /* Optional native dark mode support */
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --background: #0f1115;
-      --foreground: #ededed;
-    }
-  }
   * {
     @apply border-border outline-ring/50;
   }
@@ -157,3 +150,49 @@ body {
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
 }
+
+/* Custom Hero Mockup & Illustration Animations */
+@keyframes scan-laser {
+  0% {
+    top: 20%;
+    opacity: 0.3;
+  }
+  50% {
+    top: 75%;
+    opacity: 1;
+  }
+  100% {
+    top: 20%;
+    opacity: 0.3;
+  }
+}
+
+.animate-scan-laser {
+  animation: scan-laser 2.4s ease-in-out infinite;
+}
+
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float-gentle {
+  animation: float-gentle 4s ease-in-out infinite;
+}
+
+@keyframes float-delayed {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(7px);
+  }
+}
+
+.animate-float-delayed {
+  animation: float-delayed 4.8s ease-in-out infinite;
+}
